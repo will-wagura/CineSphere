@@ -85,10 +85,12 @@ main {
 .movie-info {
     color: #eee;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem 1rem;
     letter-spacing: 0.5px;
+    font-size: 14px;
 }
 
 .movie-info h3 {
@@ -111,6 +113,10 @@ main {
 
 .movie-info span.red {
     color: rgb(189, 42, 42);
+}
+
+.rating {
+    margin-top: 5px;
 }
 
 .overview {
