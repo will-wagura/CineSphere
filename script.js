@@ -25,7 +25,11 @@ function showMovies(movies) {
     main.innerHTML = "";
 
     movies.forEach((movie) => {
-        const { poster_path, title, vote_average, overview } = movie;
+        const { poster_path, title, vote_average, overview, release_date, runtime } = movie;
+
+        const formattedVoteAverage = vote_average.toFixed(1);
+
+        const releaseYear = new Date(release_date).getFullYear();
 
         const movieEl = document.createElement("div");
         movieEl.classList.add("movie");
@@ -37,9 +41,12 @@ function showMovies(movies) {
             />
             <div class="movie-info">
                 <h3>${title}</h3>
+                <div class="rating">
                 <span class="${getClassByRate(
-                    vote_average
-                )}">${vote_average}</span>
+                    formattedVoteAverage
+                )}">${formattedVoteAverage}</span>
+                <span class="year">${releaseYear}</span>
+                </div>
             </div>
             <div class="overview">
                 <h3>Overview:</h3>
